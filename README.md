@@ -1,6 +1,8 @@
-Kullanılan Teknolojiler;
+-----Kullanılan Teknolojiler-----
 
- ASP.Net MVC Framework tabanlı
+ASP.Net MVC Framework tabanlı
+
+💻 MSSQL Server ile veri tabanı oluşturuldu.
  
 💾 Entity Framework ORM aracı olarak kullanıldı.
 
@@ -10,9 +12,7 @@ Kullanılan Teknolojiler;
 
 🖥️ LINQ sorguları eklendi.
 
-💻 MSSQL Server ile veri tabanı oluşturuldu.
-
 📤 PartialView, Paging yapısı, DropDownList'ten veri çekme işlemleri uygulandı. 
 
-📊ChartJs Plugin kullanılarak veriler grafiğe dönüştürüldü.
+📊ChartJs Plugin kullanılarak veriler grafiğe aktarıldı.
 
