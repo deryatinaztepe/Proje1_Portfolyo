@@ -1,0 +1,36 @@
+﻿@model Proje1_Portfolyo.Models.Tbl_Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+
+<h2 class="m-4">Eğitim Güncelleme Sayfası</h2>
+
+<form method="post">
+
+
+    @Html.HiddenFor(x => x.EducationID, new { @class = "form-control" })
+
+
+    <label>Okul Adı</label>
+    @Html.TextBoxFor(x => x.Subtitle, new { @class = "form-control" })
+
+    <br />
+
+    <label>Eğitim Derecesi</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Eğitim Tarihi</label>
+    @Html.TextBoxFor(x => x.EducationDate, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 6, 0, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Kategori Güncelle</button>
+</form>
+

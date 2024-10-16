@@ -1,0 +1,43 @@
+﻿@model List<Proje1_Portfolyo.Models.Tbl_Message>
+
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4"> Gelen Mesajlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Mesajı Aç</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @*<tr>*@
+        <tr>
+            <td>@item.MessageID</td>
+            <td>@item.Name</td>
+            <td>@item.Subject</td>
+            <td>@item.SendDate</td>
+            <td style="color: @(@item.Tbl_Category.CategoryName == "Teşekkür"? "blue" : @item.Tbl_Category.CategoryName == "Proje Talebi"? "yellow" :@item.Tbl_Category.CategoryName == "Şikayet"? "red" : @item.Tbl_Category.CategoryName == "Öneri"? "pink" :@item.Tbl_Category.CategoryName == "Kutlama"? "lightblue":@*@item.Tbl_Category.CategoryName == "Diğer"? "lightgreen"*@"purple" )">@item.Tbl_Category.CategoryName</td>
+            @if (item.IsRead == false)
+            {
+                <td><a href="/Message/MessageStatusChangeToTrue/@item.MessageID" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+            }
+            else
+            {
+                <td><a href="/Message/MessageStatusChangeToFalse/@item.MessageID" class="btn btn-warning">Okunmadı Olarak İşaretle</a></td>
+            }
+
+            <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Message/MessageDetail/@item.MessageID" class="btn btn-secondary">Mesajı Aç</a></td>
+        </tr>
+    }
+</table>

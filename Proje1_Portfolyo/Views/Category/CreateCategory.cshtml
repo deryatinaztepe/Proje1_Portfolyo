@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+
+<h2 class="mb-4">Yeni Kategori Girişi</h2>
+
+<form method="post">
+    <label>Kategori Adı</label>
+    <input type="text" name="CategoryName" class="form-control" />
+    <br />
+
+    <label>Kategori Durumu</label>
+    <input type="text" name="CategoryStatus" class="form-control" />
+    <br />
+
+    <button class="btn btn-info">Kategori Oluştur</button>
+   
+   <a href="/Category/CategoryList/" class="btn btn-info">Kategori Listesi</a>
+</form>

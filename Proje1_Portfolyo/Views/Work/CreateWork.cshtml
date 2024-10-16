@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "CreateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2 class="mb-4">Yeni Çalışma Girişi</h2>
+
+<form method="post">
+    <label>Çalışma Adı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="ImageUrl" class="form-control" />
+    <br />
+    <label>Github</label>
+    <input type="text" name="GithubUrl" class="form-control" />
+    <br />
+
+    <button class="btn btn-info">Çalışma Ekle</button>
+
+    <a href="/Work/WorkList/" class="btn btn-info">Çalışmalarım</a>
+</form>

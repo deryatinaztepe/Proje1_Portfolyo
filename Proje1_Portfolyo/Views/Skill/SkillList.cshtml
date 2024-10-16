@@ -1,0 +1,73 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Proje1_Portfolyo.Models.Tbl_Skill>
+
+
+
+@{
+    ViewBag.Title = "SkillList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yetenekleri Listesi</h2>
+
+<table class="table table-bordered ">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Değer</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SkillID</td>
+            <td>@item.Title</td>
+            <td>@item.Value</td>
+            <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger ">Sil</a></td>
+            <td><a href="#" class="btn btn-success ">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("SkillList", new { sayfa }))
+
+<a href="/Skill/CreateSkill/" class="btn btn-info">Yetenek Girişi</a>
+
+
+
+<div>
+    <canvas id="Chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('Chart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['C#', 'Asp.NET Core', 'SQL', 'Python', 'Veri Analizi', 'Asp.NET MVC', ' R Programlama', 'C', 'C++', 'Java', 'PHP','Pascal', 'Delphi', 'JavaScript', 'Angular', 'Oracle'],
+      datasets: [{
+        label: 'Yetenekler',
+        data: [95, 90, 98, 74, 65, 88,50,45,50,55,60,40,30,60,40,40],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+
+
+
+

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+
+<h2 class="mb-4">Yeni Bilgi Girişi</h2>
+
+<form method="post">
+    <label>Ünvan</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+
+    <label>Detay</label>
+    <input type="text" name="Detail" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="ImageUrl" class="form-control" />
+    <br />
+    <button class="btn btn-info">Bilgiyi Oluştur</button>
+    <a href="/About/About" class="btn btn-info">Geri Dön</a>
+
+</form>

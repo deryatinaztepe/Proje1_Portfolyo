@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CreateSocialMedia";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2 class="mb-4">Yeni Sosyal Medya Hesabı</h2>
+
+<form method="post">
+    <label>Sosyal Medya Adı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+
+    <label>İkon </label>
+    <input type="text" name="Icon" class="form-control" />
+    <br />
+    <label>Durum </label>
+    <input type="text" name="Status" class="form-control" />
+    <br />
+
+    <button class="btn btn-info">Hesap Ekle</button>
+
+    <a href="/SocialMedia/SocialMediaList/" class="btn btn-info">Geri Dön</a>
+</form>
+
+

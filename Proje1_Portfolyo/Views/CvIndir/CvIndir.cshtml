@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "CvIndir";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<a href="@Url.Action("DownloadFile", "FileDownload", new { fileName = "yeni.pdf" })">Dosyayı İndir</a>
+
+

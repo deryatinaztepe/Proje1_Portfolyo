@@ -1,0 +1,49 @@
+﻿@model  List<Proje1_Portfolyo.Models.Tbl_Profile>
+
+@{
+    ViewBag.Title = "ProfileList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2 class="mb-4">Profilim</h2>
+
+
+    <table class="table table-bordered ">
+        <tr>
+            <th>Profil ID</th>
+            <th>Unvan</th>
+            <th>Açıklama</th>
+            <th>Adres</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Github</th>
+            <th>Resim</th>
+            <th>Lokasyon</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProfileID</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Address</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Github</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.MapLocation</td>
+
+                <td><a href="/Profile/UpdateProfile/@item.ProfileID" class="btn btn-success ">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+
+
+
+
+
+
+
+
